@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon -->
+
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.svg">
+
+    <!-- styles import -->
+
+    <link rel="stylesheet" href="./styles/dist/main-output.css">
+
+    <!-- google-fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+
+    <!-- page title -->
+
+    <title>Home | full stack project with the MERN stack, tailwind-css and HTML</title>
+</head>
+
+<body>
+    <main class="main-wrapper nunito-sans text-[14px] px-3 pb-[100px] bg-blue-50 min-h-screen">
+
+        <!-- overlay -->
+
+        <div id="modalOverlay"
+            class="overlay fixed min-h-screen top-0 left-0 right-0 hidden justify-center items-center"
+            style="background-color: rgba(0, 0, 0, 0.75);">
+            <div class="overlay-modal bg-white p-6 rounded w-[400px] flex flex-col gap-4">
+                <h3 class="font-bold text-[20px]">
+                    Delete a developer profile
+                </h3>
+                <div>
+                    You are about to delete a developer profile, are you sure you want to continue?
+                </div>
+                <div class="buttons-wrapper flex gap-6">
+                    <button id="cancelDeleteProfileButton"
+                        class="rounded px-4 py-2 font-bold bg-blue-100 text-blue-900 hover:bg-blue-200">No
+                        thanks!</button><button id="confirmDeleteProfileButton"
+                        class="rounded px-4 py-2 font-bold bg-green-100 text-green-900 hover:bg-green-200">Yes
+                        delete</button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar flex justify-between items-center py-4 md:px-[20px] lg:px-[10%]">
+            <div class="nav-left flex gap-4 items-center">
+                <span class="font-bold sm:text-[16px]">
+                    Developer profiles
+                </span>
+                <div id="profilesCountWrapper" class="profiles-counter bg-blue-900 text-white py-1 px-4 rounded">
+                    X
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="./pages/add-profile.html"
+                    class="add-profile-button bg-black text-white rounded px-6 py-1 font-bold sm:text-[16px] sm:py-2"
+                    type="button">Add
+                    Profile
+                </a>
+            </div>
+        </nav>
+        <section id="profileCardsWrapper" class="card-wrapper mt-10 flex flex-col md:flex-row 
+            gap-6 md:gap-[60px] sm:px-[10%] md:px-[20px] md:justify-center md:mx-auto md:flex-wrap lg:px-[10%]">
+            <p class="my-40 text-center text-gray-400 text-[20px] mx-auto">Loading developer profiles...</p>
+        </section>
+    </main>
+
+    <!-- local script import  -->
+
+    <script src="./scripts/main.js"></script>
+
+    <!-- axios CDN -->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

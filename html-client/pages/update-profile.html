@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon -->
+
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.svg">
+
+    <!-- styles import -->
+
+    <link rel="stylesheet" href="../styles/dist/main-output.css">
+
+    <!-- google-fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+
+    <!-- page title -->
+
+    <title>Update profile | full stack project with the MERN stack, tailwind-css and HTML</title>
+
+</head>
+
+<body>
+    <main class="py-[70px] px-3 sm:w-[600px] md:w-[650px] sm:mx-auto text-[14px] nunito-sans">
+        <section class="pop-ups relative">
+            <!-- progress modal -->
+            <div
+                class="progress-modal rounded w-[280px] sm:w-[500px] px-4 py-3 text-center bg-blue-100 text-blue-900 hidden absolute top-0 left-0 right-0 mx-auto">
+                Developer profile is being
+                updated, please wait.</div>
+
+
+            <!-- success modal -->
+            <div
+                class="success-modal rounded w-[280px] sm:w-[500px] px-4 py-3 text-center bg-green-100 text-green-900 hidden absolute top-0 left-0 right-0 mx-auto">
+                Developer profile updated successfully</div>
+        </section>
+
+        <header class="section-header text-center">
+            <h1 class="text-3xl text-blue-900 font-bold poppins">Update Developer Profile</h1>
+            <p class="sm:text-[16px] mt-4">Ensure to use a different/unique email for this profile.</p>
+        </header>
+        <section class="form-wrapper mt-16">
+            <form class="update-profile-form">
+                <div class="full-name input-group flex flex-col gap-3 mb-5">
+                    <label for="full-name" class="text-[16px] font-bold">Full name</label>
+                    <input id="fullName" type="text" placeholder="full name" required
+                        class="rounded border px-3 py-3 outline-none">
+                </div>
+                <div class="email input-group flex flex-col gap-3 mb-5">
+                    <label for="email" class="text-[16px] font-bold">Email</label>
+                    <input id="email" type="email" placeholder="email" required
+                        class="rounded border px-3 py-3 outline-none">
+                </div>
+                <div class="website input-group flex flex-col gap-3 mb-5">
+                    <label for="website" class="text-[16px] font-bold">Website</label>
+                    <input id="website" type="text" placeholder="https://example-website.com" required
+                        class="rounded border px-3 py-3 outline-none">
+                </div>
+                <div class="about input-group flex flex-col gap-3 mb-5">
+                    <label for="about" class="text-[16px] font-bold">about</label>
+                    <textarea rows="7" id="about" type="text" placeholder="developer bio" required
+                        class="rounded border px-3 py-3 outline-none">
+                        </textarea>
+                </div>
+                <button type="submit" class="py-3 text-white bg-blue-900 mt-8 w-full text-[16px] font-bold">
+                    Update Profile
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- local script import  -->
+
+    <script src="../scripts/update-profile.js"></script>
+
+    <!-- axios CDN -->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
