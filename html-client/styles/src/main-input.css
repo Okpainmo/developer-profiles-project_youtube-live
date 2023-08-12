@@ -15,6 +15,3 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.card {
-    @apply p-4 bg-white rounded flex flex-col justify-between min-h-[340px] md:w-[45%] 2xl:w-[30%]
-}
