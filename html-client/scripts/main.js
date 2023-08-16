@@ -47,7 +47,7 @@ async function handleGetProfiles() {
               </p>`);
   }
 
-  if (profilesData.profilesCount > 0) {
+  if (profilesData && profilesData.profilesCount > 0) {
     const profiles = profilesData.profiles.map((each) => {
       const avatarAlphabet = each.fullName.slice(0, 1).toUpperCase();
 
@@ -110,15 +110,9 @@ async function handleGetProfiles() {
 
     cardsWrapper.innerHTML = profiles.join('');
     profilesCount.innerHTML = profilesData.profilesCount;
-  }
-}
 
-handleGetProfiles();
+    // implementing the previous handleShowOverlay function logic
 
-async function handleShowOverlay() {
-  const profilesData = await handleFetchData();
-
-  if (profilesData && profilesData.profilesCount > 0) {
     const showOverlayButtons = document.querySelectorAll(
       '.delete-profile-icon'
     );
@@ -132,7 +126,30 @@ async function handleShowOverlay() {
   }
 }
 
-handleShowOverlay();
+handleGetProfiles();
+
+/* Code(the handleShowOverlay function) is dormant since there is no page reload which should re-invoke it after we delete a profile. We
+could have equally re-invoked it inside the handleConfirmDeleteProfile function but it would cause a needless repetition of the handleFetchData function.
+*/
+
+/* async function handleShowOverlay() {
+  const profilesData = await handleFetchData();
+
+  if (profilesData && profilesData.profilesCount > 0) {
+    // const showOverlayButtons = document.querySelectorAll(
+    //   '.delete-profile-icon'
+    // );
+
+    // showOverlayButtons.forEach((each) => {
+    //   each.addEventListener('click', (e) => {
+    //     modalOverlay.style.display = 'flex';
+    //     profileId = e.target.dataset.id;
+    //   });
+    // });
+  }
+} */
+
+// handleShowOverlay();
 
 function handleCancelDeleteProfile() {
   modalOverlay.style.display = 'none';
