@@ -1,5 +1,5 @@
-import './styles/globals.css';
-import { poppins, nunito_sans } from './utils/fonts';
+import '../styles/globals.css';
+import { poppins, nunito_sans } from '../utils/fonts';
 import HomeContextProvider from './context/HomeContext';
 
 export default function RootLayout({ children }) {
