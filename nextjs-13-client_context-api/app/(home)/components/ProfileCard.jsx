@@ -3,7 +3,7 @@
 import { useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import DeleteProfileIcon from '../assets/images/delete-icon.png';
+import DeleteProfileIcon from '../../assets/images/delete-icon.png';
 import { HomeContext } from '../context/HomeContext';
 
 function ProfileCard({ profile }) {
